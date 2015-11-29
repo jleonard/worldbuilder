@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Worldbuilder</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="">
+  </head>
+  <body>
+    <main>
+      <h1>Mastering Layouts Part 1 : Basic Layouts</h1><p>Here you&#39;ll start by learning to apply basic horizontal and vertical layout patterns. In Part 2 we&#39;ll learn how to achieve more complex layouts by using a grid system.  </p>
+<h2>Basic layouts</h2><p>These basic layouts assign a direction for a parent container to arrange its children. Layouts are defined by assigning a direction and the gutter (spacing) you want between each element. </p>
+<p><strong>Example</strong>  </p>
+<pre><code>@gutter: 16px;
+.my-horizontal-layout{
+  #layout.horizontal(@gutter);
+}
+
+.my-vertical-layout{
+  #layout.vertical(@gutter);
+}
+</code></pre><h2>Changing layout direction</h2><p>The layout mixins are designed to be swappable in case you need to change direction. In the example below  direction changes based on the screen width.  </p>
+<pre><code>.my-layout{
+  #layout &gt; .vertical(@gutter);
+}
+
+@media all and (max-width: 50em) {
+  .my-layout &gt; .horizintal(@gutter);
+}
+</code></pre><h2>When to use layouts instead of grids.</h2><ol>
+<li><strong>When you don&#39;t need to the child elements to fit end to end inside the parent container.</strong> Layouts use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin">margins</a> to apply the gutter. Margins add an additional width to each element which makes it difficult to calculate the precise width needed to fill an entire container. </li>
+<li><strong>When you don&#39;t need the child elements to wrap to another line or column.</strong> If elements might need to wrap inside the layout container, use a grid system. When elements wrap inside a layout container the gutters on wrapping items break the alignment.</li>
+</ol>
+    </main>
+    <script type="text/javascript" src=""></script>
+  </body>
+</html>
