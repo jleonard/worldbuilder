@@ -1,12 +1,9 @@
 /*
- * The reset mixins provide a convenience for setting
- * css properties to their default values.
- *
- * The unset and initial keywords don't have wide enough
- * cross-browser support.
+ * The initial mixins provide a convenience for setting
+ * css properties back to their default values.
  * 
  */
-#reset{
+#initial{
 
   // positioning
   // -------------------------
@@ -40,6 +37,10 @@
 
   // box model
   // -------------------------
+  ._(box-sizing){
+    box-sizing: content-box;
+  }
+
   ._(height){
     height: auto;
   }
@@ -88,6 +89,22 @@
     padding: 0;
   }
 
+  ._(padding-top){
+    padding-top: 0;
+  }
+
+  ._(padding-bottom){
+    padding-bottom: 0;
+  }
+
+  ._(padding-left){
+    padding-left: 0;
+  }
+
+  ._(padding-right){
+    padding-right: 0;
+  }
+
   ._(border){
     border: none;
   }
@@ -118,6 +135,10 @@
     text-transform: none;
   }
 
+  ._(text-shadow){
+    text-shadow: none;
+  }
+
   // misc.
   // -------------------------
   ._(background-color){
@@ -126,10 +147,6 @@
 
   ._(background-image){
     background-image: none;
-  }
-
-  ._(box-sizing){
-    box-sizing: content-box;
   }
 
   ._(box-shadow){
@@ -142,10 +159,6 @@
 
   ._(overflow){
     overflow: visible;
-  }
-
-  ._(text-shadow){
-    text-shadow: none;
   }
 
   ._(transform){
