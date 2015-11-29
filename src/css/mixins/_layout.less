@@ -1,0 +1,40 @@
+#layout{
+
+  // a horizontal layout
+  .horizontal(@margin:0.75rem,@justify:flex-start){
+    #flex > .row();
+    #flex > .wrap(wrap);
+    #flex > .justify(@justify);
+    > *{
+      #reset > ._(margin-top);
+      #reset > ._(margin-bottom);
+      margin-left: @margin / 2;
+      margin-right: @margin / 2;
+      &:first-child{
+        margin-left: 0;
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+
+  // a vertical layout
+  .vertical(@margin:0.75rem){
+    #flex > .column();
+    #flex > .wrap(wrap);
+    > *{
+      #reset > ._(margin-right);
+      #reset > ._(margin-left);
+      margin-top: @margin / 2;
+      margin-bottom: @margin / 2;
+      &:first-child{
+        margin-top: 0;
+      }
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+
+}

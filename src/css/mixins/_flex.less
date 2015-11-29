@@ -1,0 +1,23 @@
+// flex box conveniences
+//-------------------------------
+#flex{
+
+  .row(){
+    display: flex;
+    flex-flow: row;
+  }
+
+  .column(){
+    display: flex;
+    flex-flow: column;
+  }
+
+  .wrap(@val:wrap){
+    flex-wrap: @val;
+  }
+
+  .justify(@val:flex-start){
+    justify-content: @val;
+  }
+
+}
