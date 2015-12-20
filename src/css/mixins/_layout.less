@@ -1,13 +1,13 @@
 #layout{
 
-  // a horizontal layout
+  // horizontal layouts
   .horizontal(@margin:0.75rem,@justify:flex-start){
     #flex > .row();
     #flex > .wrap(wrap);
     #flex > .justify(@justify);
     > *{
-      #reset > ._(margin-top);
-      #reset > ._(margin-bottom);
+      #initial > ._(margin-top);
+      #initial > ._(margin-bottom);
       margin-left: @margin / 2;
       margin-right: @margin / 2;
       &:first-child{
@@ -19,13 +19,13 @@
     }
   }
 
-  // a vertical layout
+  // vertical layouts
   .vertical(@margin:0.75rem){
     #flex > .column();
     #flex > .wrap(wrap);
     > *{
-      #reset > ._(margin-right);
-      #reset > ._(margin-left);
+      #initial > ._(margin-right);
+      #initial > ._(margin-left);
       margin-top: @margin / 2;
       margin-bottom: @margin / 2;
       &:first-child{
