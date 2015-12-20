@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs": "harp compile docs .tmp",
-    "postdocs": "rsync -a .tmp/ . && rm -r .tmp"
+    "postdocs": "rsync -a .tmp/ . && rm -r .tmp",
+    "develop" : "harp server docs --port 3002"
   },
   "repository": {
     "type": "git",

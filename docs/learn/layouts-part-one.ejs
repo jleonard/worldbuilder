@@ -1,0 +1,93 @@
+<h2>
+Userstanding Layouts : Part 1 - Basic horizontal and vertical layouts
+</h2>
+
+<p class='major'>
+In Part 1 you'll learn how to apply basic horizontal and vertical layout rules to containers. In Part 2 you'll learn how to achieve more complex layouts by using a grid system.
+</p>  
+
+<h3>
+Basic horizontal &amp; vertical layouts
+</h3>
+
+<p>
+Use layouts as a quick way to define how a parent container arranges its children.
+<br/>
+<strong>Example: applying a horizontal layout</strong>
+</p>
+
+<div class='hbox'>
+<pre class='lang-less major'><code>
+@gutter: 12px;
+.demo-horizontal-layout{
+  #layout.horizontal(@gutter);
+}
+</code></pre>
+<aside>
+  <div class='demo-horizontal-layout'>
+    <div class='box'></div>
+    <div class='box'></div>
+    <div class='box'></div>
+  </div>
+</aside>
+</div>
+
+<p>
+<strong>Example: applying a vertical layout</strong>
+</p>
+
+<div class='hbox'>
+<pre class='lang-less major'><code>
+@gutter: 12px;
+.demo-vertical-layout{
+  #layout.vertical(@gutter);
+}
+</code></pre>
+<aside>
+  <div class='demo-vertical-layout'>
+    <div class='box'></div>
+    <div class='box'></div>
+    <div class='box'></div>
+  </div>
+</aside>
+</div>
+
+<h3>
+Changing direciton : responsive layouts
+</h3>
+
+<p class='major'>
+</p>
+
+<p>
+  Here's a mobile first example of a container that's vertical by default (on small screens) and horizontal at larger widths.
+
+  <strong>Example: a responsive layout</strong>
+</p>
+
+<div class='hbox'>
+<pre class='lang-less major'><code>
+@gutter: 12px;
+.demo-changing-layout{
+  #layout.vertical(@gutter);
+}
+
+@media all and (min-width: 50em) {
+  .demo-changing-layout{
+    #layout.horizontal(@gutter);
+  } 
+}
+
+</code></pre>
+<aside>
+  <div class='demo-changing-layout'>
+    <div class='box'></div>
+    <div class='box'></div>
+    <div class='box'></div>
+  </div>
+</aside>
+</div> 
+
+##When to use layouts instead of grids.
+1. **When you don't need to the child elements to fit end to end inside the parent container.** Layouts use [margins](https://developer.mozilla.org/en-US/docs/Web/CSS/margin) to apply the gutter. Margins add an additional width to each element which makes it difficult to calculate the precise width needed to fill an entire container. 
+2. **When you don't need the child elements to wrap to another line or column.** If elements might need to wrap inside the layout container, use a grid system. When elements wrap inside a layout container the gutters on wrapping items break the alignment.

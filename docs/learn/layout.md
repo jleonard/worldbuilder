@@ -1,6 +1,19 @@
-# Mastering Layouts Part 1 : Basic Layouts  
+#Userstanding Layouts : Part 1 - Basic horizontal and vertical layouts
 
-Here you'll start by learning to apply basic horizontal and vertical layout patterns. In Part 2 we'll learn how to achieve more complex layouts by using a grid system.  
+In Part 1 you'll learn how to apply basic horizontal and vertical layout rules to containers. In Part 2 you'll learn how to achieve more complex layouts by using a grid system.  
+
+## Basic horizontal & vertical layouts   
+
+Use layouts as a quick way to define how a parent container arranges its children. 
+
+**Example: applying a horizontal layout**
+
+```
+@gutter: 12px;
+.my-layout{
+  #layout.horizontal(@gutter);
+}
+```
 
 ##Basic layouts 
 
