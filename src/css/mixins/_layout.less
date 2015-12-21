@@ -37,4 +37,35 @@
     }
   }
 
+  // a container for horizontal columns
+  .grid(@gutter:0.75rem){
+    #flex > .row();
+    #flex > .wrap();
+    align-items: stretch;
+    align-content: flex-start;
+    margin: 0 @gutter * -0.5;
+    > *,[class*='column']{
+      padding: 0 @gutter * 0.5;
+      margin-bottom: @gutter;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  // a container for stacking columns
+  .stack(@gutter:0.75rem){
+    margin: @gutter * -0.5 0;
+    > *,[class*='column']{
+      width: 100%;
+      padding: @gutter * 0.5 0;
+      margin-bottom: 0;
+    }
+    &.balanced{
+      > *{
+        flex-grow: 1;
+      }
+    }
+  }
+
 }

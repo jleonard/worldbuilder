@@ -111,6 +111,14 @@ p{
   font-size: @baseUnit * 1.5;
 }
 
+&.positive{
+  color: @green;
+}
+
+&.negative{
+  color: @red;
+}
+
 
 // layout conveniences
 // ---------------------------------
@@ -127,13 +135,24 @@ p{
   background-color: @aqua;
 }
 
+.text-box{
+  background-color: @aqua;
+}
+
 // the demo/live pattern
 .hbox.demo{
   //background-color: lighten(@slate,90%);
-  border: 1px solid @newsprint;
-  padding: @baseUnit * 2;
-  border-radius: @radius;
   pre,aside{
     width: 45%;
   }
+}
+
+.vbox.demo{
+  #layout.vertical(12px);
+}
+
+.demo{
+  border: 1px solid @newsprint;
+  padding: @baseUnit * 2;
+  border-radius: @radius;
 }

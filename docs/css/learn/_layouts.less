@@ -29,3 +29,19 @@
     margin-bottom: 12px;
   }
 }
+
+.demo-no-fit-layout,.demo-yes-fit-layout{
+  background-color: @smoke;
+}
+
+.demo-no-fit-layout{
+  #layout.horizontal(12px);
+}
+
+.demo-yes-fit-layout{
+  #layout.horizontal(12px);
+  > * { margin-bottom: 12px; }
+  .text-box{
+    width: 25%;
+  }
+}

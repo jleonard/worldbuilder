@@ -89,35 +89,30 @@ When to use layouts
 </h3>
 
 <p>
-Use layouts when elements aren't intended to wrap inside the container.
+Use layouts when elements aren't intended to fit precisely end to end inside a container.
 </p>
 
-<p>Layouts use margin to define the gutters between items. The first item doesn't have a left margin and the last item doesn't have a right margin. Every other item divides the gutter in two and puts half of it on the right and half on the left.</p>
-
-<div class='hbox demo'>
+<div class='vbox demo'>
 <aside>
-  <div class='demo-no-wrapping'>
-    <div class='box' data-show-margin-left data-show-margin-right></div>
-    <div class='box' data-show-margin-left data-show-margin-right></div>
-    <div class='box' data-show-margin-left data-show-margin-right></div>
-    <div class='box' data-show-margin-left data-show-margin-right></div>
+  <strong class='positive'>Do</strong> use for simple directional positioning of elements.
+  <div class='demo-no-fit-layout'>
+    <div class='text-box' data-show-margin-left data-show-margin-right>Menu Item 01</div>
+    <div class='text-box' data-show-margin-left data-show-margin-right>Menu Item 02</div>
+    <div class='text-box' data-show-margin-left data-show-margin-right>Menu Item 03</div>
+    <div class='text-box' data-show-margin-left data-show-margin-right>Long Menu Item 04</div>
   </div>
 </aside>
 <aside>
-  <div class='demo-bad-wrapping'>
-    <div class='box' data-show-margin-left data-show-margin-right></div>
-    <div class='box' data-show-margin-left data-show-margin-right></div>
-    <div class='box' data-show-margin-left data-show-margin-right></div>
-    <div class='box' data-show-margin-left data-show-margin-right></div>
+  <strong class='negative'>Don't</strong> use when you need to fit items end-to-end using percentages.
+  <div class='demo-yes-fit-layout'>
+    <div class='text-box' data-show-margin-left data-show-margin-right>width: 25%</div>
+    <div class='text-box' data-show-margin-left data-show-margin-right>width: 25%</div>
+    <div class='text-box' data-show-margin-left data-show-margin-right>width: 25%</div>
+    <div class='text-box' data-show-margin-left data-show-margin-right>width: 25%</div>
   </div>
 </aside>
 </div>
 
-<ul>
-  <li>Elements aren't intended to wrap inside the container.</li>
-  <li>Elements aren't intended to fit end to end inside a container.</li>
-</ul>
-
-##When to use layouts instead of grids.
-1. **When you don't need to the child elements to fit end to end inside the parent container.** Layouts use [margins](https://developer.mozilla.org/en-US/docs/Web/CSS/margin) to apply the gutter. Margins add an additional width to each element which makes it difficult to calculate the precise width needed to fill an entire container. 
-2. **When you don't need the child elements to wrap to another line or column.** If elements might need to wrap inside the layout container, use a grid system. When elements wrap inside a layout container the gutters on wrapping items break the alignment.
+<p>
+Layouts use margins to define the gutter between items. Margins work great for simple layouts and require less markup than a full grid system. The margin technique breaks down when you want to fit columns edge to edge inside a container. Fot that you want to use a proper grid system.
+</p>
