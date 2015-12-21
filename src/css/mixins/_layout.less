@@ -6,12 +6,12 @@
     #flex > .wrap(wrap);
     #flex > .justify(@justify);
     > *{
-      #initial > ._(margin-top);
+      //#initial > ._(margin-top);
       #initial > ._(margin-bottom);
-      margin-left: @margin / 2;
-      margin-right: @margin / 2;
+      //margin-left: @margin / 2;
+      margin-right: @margin;
       &:first-child{
-        margin-left: 0;
+        //margin-left: 0;
       }
       &:last-child{
         margin-right: 0;
@@ -25,11 +25,11 @@
     #flex > .wrap(wrap);
     > *{
       #initial > ._(margin-right);
-      #initial > ._(margin-left);
-      margin-top: @margin / 2;
-      margin-bottom: @margin / 2;
+      //#initial > ._(margin-left);
+      //margin-top: @margin / 2;
+      margin-bottom: @margin;
       &:first-child{
-        margin-top: 0;
+        //margin-top: 0;
       }
       &:last-child{
         margin-bottom: 0;
