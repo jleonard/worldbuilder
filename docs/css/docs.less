@@ -1,8 +1,139 @@
 @import (less) '../../src/css/worldbuilder.less';
 
+@fontPath : '../fonts/';
+
+@import (less) '_box-model-display.less';
+@import (less) '_font-face.less';
 @import (less) 'learn/_layouts.less';
+@import (less) '_prism.less';
+
+@navy      : #001f3f;
+@blue      : #0074d9;
+@aqua      : #7fdbff; 
+@teal      : #39cccc; 
+@olive     : #3d9970; 
+@green     : #2ecc40;
+@lime      : #01ff70;
+@yellow    : #ffdc00;
+@orange    : #ff851b;
+@red       : #ff4136;
+@maroon    : #85144b;
+@fuchsia   : #f012be;
+@purple    : #b10dc9;
+@black     : #111;
+@gray      : #aaa;
+@slate     : #303030;
+@silver    : #ddd;
+@smoke     : #f5f5f5;
+@white     : #fff;
+@paper     : #fcfaf2;
+@newsprint : #f0ece8;
+@pee       : #f4fd72;
+
+@sans : 'Open Sans', sans-serif;
+@mono : 'Source Code Pro', monospace;
+
+html{
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body{
+  font-family: @sans;
+}
+
+*,*:before,*:after{
+  box-sizing: border-box;
+}
+
+// macro layout : article
+// ------------------------------
+main{
+  .inner{
+    margin: 0 auto;
+    max-width: 1024px;
+    > *{ float: left; }
+  }
+  .inner > article{
+    width: 80%;
+  }
+  .inner > nav{
+    width: 20%;
+    padding-right: @baseUnit;
+    ul{
+      #initial > ._(margin);
+      #initial > ._(padding);
+      list-style-type: none;
+    }
+    a{
+      text-decoration: none;
+      color: @slate;
+      font-weight: 700;
+    }
+  }
+}
+
+pre,code{
+  &[class*="language-"]{
+    margin: 0;
+    padding: 0;
+  }
+}
+
+pre,code{
+  font-family: @mono !important;
+}
+
+// typography
+// ---------------------------------
+// 1, 1.5, 2.25, 3.375, 5.063, 7.594, 11.391
+h1{
+  font-size: @baseUnit * 5.063;
+  text-transform: uppercase;
+}
+h2{
+  font-size: @baseUnit * 3.375;
+}
+
+h3{
+  font-size: @baseUnit * 2.25;
+}
+
+h4{
+  font-size: @baseUnit * 1.5;
+}
+
+h5{
+  font-size: @baseUnit;
+}
+
+p{
+  font-size: @baseUnit * 1.5;
+}
+
+
+// layout conveniences
+// ---------------------------------
+.hbox{
+  #layout.horizontal();
+}
+
+.vbox{
+  #layout.vertical();
+}
 
 .box{
   #util.square(@baseUnit * 3);
   background-color: @aqua;
+}
+
+// the demo/live pattern
+.hbox.demo{
+  //background-color: lighten(@slate,90%);
+  border: 1px solid @newsprint;
+  padding: @baseUnit * 2;
+  border-radius: @radius;
+  pre,aside{
+    width: 45%;
+  }
 }

@@ -6,12 +6,24 @@
     <title>Worldbuilder</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="css/docs.css">
+    <link rel="stylesheet" href="/css/docs.css">
   </head>
   <body>
+    <%- partial('_partials/navigation') %>
     <main>
-      <%- yield %>
+      <div class='inner'>
+        <article>
+          <%- yield %>
+        </article>
+        <nav>
+          <ul id='sidenav'>
+            
+          </ul>
+        </nav>
+      </div>
     </main>
-    <script type="text/javascript" src=""></script>
+    <script type="text/javascript" src="/js/prism.js"></script>
+    <script title="This script does x" src="/js/side-nav.js"></script>
+    <script title="This script does x" src="/js/box.model.display.js"></script>
   </body>
 </html>

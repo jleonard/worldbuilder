@@ -16,11 +16,10 @@ Use layouts as a quick way to define how a parent container arranges its childre
 <strong>Example: applying a horizontal layout</strong>
 </p>
 
-<div class='hbox'>
+<div class='hbox demo'>
 <pre class='lang-less major'><code>
-@gutter: 12px;
 .demo-horizontal-layout{
-  #layout.horizontal(@gutter);
+  #layout.horizontal(12px);
 }
 </code></pre>
 <aside>
@@ -36,13 +35,7 @@ Use layouts as a quick way to define how a parent container arranges its childre
 <strong>Example: applying a vertical layout</strong>
 </p>
 
-<div class='hbox'>
-<pre class='lang-less major'><code>
-@gutter: 12px;
-.demo-vertical-layout{
-  #layout.vertical(@gutter);
-}
-</code></pre>
+<div class='hbox demo'>
 <aside>
   <div class='demo-vertical-layout'>
     <div class='box'></div>
@@ -50,10 +43,15 @@ Use layouts as a quick way to define how a parent container arranges its childre
     <div class='box'></div>
   </div>
 </aside>
+<pre class=''><code class='language-less'>
+.demo-vertical-layout{
+  #layout.vertical(12px);
+}
+</code></pre>
 </div>
 
 <h3>
-Changing direciton : responsive layouts
+Changing direction : responsive layouts
 </h3>
 
 <p class='major'>
@@ -65,20 +63,7 @@ Changing direciton : responsive layouts
   <strong>Example: a responsive layout</strong>
 </p>
 
-<div class='hbox'>
-<pre class='lang-less major'><code>
-@gutter: 12px;
-.demo-changing-layout{
-  #layout.vertical(@gutter);
-}
-
-@media all and (min-width: 50em) {
-  .demo-changing-layout{
-    #layout.horizontal(@gutter);
-  } 
-}
-
-</code></pre>
+<div class='hbox demo'>
 <aside>
   <div class='demo-changing-layout'>
     <div class='box'></div>
@@ -86,7 +71,52 @@ Changing direciton : responsive layouts
     <div class='box'></div>
   </div>
 </aside>
-</div> 
+<pre><code class='language-less'>
+.demo-changing-layout{
+  #layout.vertical(12px);
+}
+
+@media all and (min-width: 50em) {
+  .demo-changing-layout{
+    #layout.horizontal(12px);
+  } 
+}
+</code></pre>
+</div>
+
+<h3>
+When to use layouts
+</h3>
+
+<p>
+Use layouts when elements aren't intended to wrap inside the container.
+</p>
+
+<p>Layouts use margin to define the gutters between items. The first item doesn't have a left margin and the last item doesn't have a right margin. Every other item divides the gutter in two and puts half of it on the right and half on the left.</p>
+
+<div class='hbox demo'>
+<aside>
+  <div class='demo-no-wrapping'>
+    <div class='box' data-show-margin-left data-show-margin-right></div>
+    <div class='box' data-show-margin-left data-show-margin-right></div>
+    <div class='box' data-show-margin-left data-show-margin-right></div>
+    <div class='box' data-show-margin-left data-show-margin-right></div>
+  </div>
+</aside>
+<aside>
+  <div class='demo-bad-wrapping'>
+    <div class='box' data-show-margin-left data-show-margin-right></div>
+    <div class='box' data-show-margin-left data-show-margin-right></div>
+    <div class='box' data-show-margin-left data-show-margin-right></div>
+    <div class='box' data-show-margin-left data-show-margin-right></div>
+  </div>
+</aside>
+</div>
+
+<ul>
+  <li>Elements aren't intended to wrap inside the container.</li>
+  <li>Elements aren't intended to fit end to end inside a container.</li>
+</ul>
 
 ##When to use layouts instead of grids.
 1. **When you don't need to the child elements to fit end to end inside the parent container.** Layouts use [margins](https://developer.mozilla.org/en-US/docs/Web/CSS/margin) to apply the gutter. Margins add an additional width to each element which makes it difficult to calculate the precise width needed to fill an entire container. 
