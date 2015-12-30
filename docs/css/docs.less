@@ -5,7 +5,9 @@
 @import (less) '_box-model-display.less';
 @import (less) '_font-face.less';
 @import (less) 'learn/_layouts.less';
+@import (less) 'learn/_box-model.less';
 @import (less) '_prism.less';
+@import (less) '_slides.less';
 
 @navy      : #001f3f;
 @blue      : #0074d9;
@@ -40,6 +42,7 @@ html{
 
 body{
   font-family: @sans;
+  margin: 0;
 }
 
 *,*:before,*:after{
@@ -111,6 +114,19 @@ p{
   font-size: @baseUnit * 1.5;
 }
 
+blockquote{
+  border-left: 8px solid @yellow;
+  font-size: @baseUnit * 1.5;
+  padding: @baseUnit;
+  a{
+    text-decoration: none;
+  }
+  cite{
+    display: block;
+    font-size: .75em;
+  }
+}
+
 &.positive{
   color: @green;
 }
@@ -134,6 +150,9 @@ p{
   #util.square(@baseUnit * 3);
   background-color: @aqua;
   position: relative;
+  &.major{
+    #util.square(@baseUnit * 6);
+  }
   span{
     #center.xy();
   }
@@ -156,8 +175,25 @@ p{
   #layout.vertical(12px);
 }
 
+.centerxy{
+  #center.xy();
+}
+
+.centery{
+  #center.y();
+}
+
 .demo{
   border: 1px solid @newsprint;
   padding: @baseUnit * 2;
   border-radius: @radius;
+}
+
+section{
+  > .inner{
+    position: relative;
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+  }
 }

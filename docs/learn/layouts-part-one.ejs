@@ -114,16 +114,25 @@ Use layouts when elements aren't intended to fit precisely end to end inside a c
 </div>
 
 <p>
-Layouts use margins to define the gutter between items. Margins work great for achieving simple layouts with the minimum amount of markup. The margin technique breaks down when you want to fit columns edge to edge inside a container. Fot that you want to use a proper grid system.
-
+<strong>Why layouts don't work with edge to edge positioning.</strong>
 <br/>
-<strong>Why they don't work</strong>
+<br/>
+Layouts use margins to define the gutter between items. Margins work great for achieving simple layouts with the minimum amount of markup. The margin technique breaks down when you want to fit columns edge to edge inside a container using percentages.
+</p>
+
+<p>
+It has to do with how the css box model works. Margins aren't calculated as part of the width or height of each element. Their width is additional. In the example below each item is 25% of the container width <em>but</em> each margin adds another 12px which goes beyond the available 100% width of the container.
 </p>
 
 <div class='hbox demo'>
   <aside>
-    <div>
-      <div class='box' data-show-margin-left data-show-margin-right><span>width: 25%</span></div>
+    <div class='demo-margin'>
+      <div class='box major' data-show-margin-left data-show-margin-right><span>width: 25%</span></div>
+      <div class='box major' data-show-margin-left data-show-margin-right><span>width: 25%</span></div>
+      <div class='box major' data-show-margin-left data-show-margin-right><span>width: 25%</span></div>
+      <div class='box major' data-show-margin-left data-show-margin-right><span>width: 25%</span></div>
     </div>
   </aside>
 </div>
+
+<p>If you want edge to edge positioning, use a grid system.</p>
