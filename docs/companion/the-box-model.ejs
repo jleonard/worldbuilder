@@ -1,0 +1,53 @@
+<h2>
+The css box model
+</h2>
+
+<p>
+Every html element on the page lives inside a box. <span class='action' data-everything-is-boxes>See for yourself</span>.
+</p>
+
+<p>
+Understanding how to style these boxes is key to put a page layout together.
+</p>
+
+<h3>Parts of the box</h3>
+
+<div class='hbox'>
+  <ol>
+    <li>A <strong data-box-component='margin'>margin</strong> that acts like an invisible force field.</li>
+    <li>A <strong data-box-component='border'>border</strong> that fences in the box.</li>
+    <li><strong data-box-component='padding'>Padding</strong> around the content.</li>
+    <li>The <strong data-box-component='content'>content</strong> area inside the box.</li>
+  </ol>
+
+
+  <div id='box-components' class='box demo-box-model'>
+    <!-- <div class='ruler'></div> -->
+    <div class='margin'></div>
+    <div class='border'></div>
+    <div class='padding'></div>
+    <div class='content'>Box</div>
+  </div>
+</div>
+
+<h3>Sizing boxes</h3>
+
+<p>
+  With 4 different components making up a box, how are widths and heights calculated?  
+</p>
+
+<p>
+  For example, consider the following css.
+</p>
+
+<pre class='language-css'><code>div{
+  width: 100px;
+  border-width: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+</code></pre>
+
+<p>
+How wide is that element? Is it 100px? Is it 100px + 10px + 10px + 10px?
+</p>

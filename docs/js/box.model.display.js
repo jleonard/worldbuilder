@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', function(){
+  var box = document.getElementById('box-components');
+  var elements = document.querySelectorAll('[data-box-component]');
+  Array.prototype.forEach.call(elements, function(el, i){
+    console.log(el);
+    el.addEventListener('mouseover',function(e){
+      box.setAttribute('data-focus',el.getAttribute('data-box-component'));
+    });
+    el.addEventListener('mouseout',function(e){
+      box.removeAttribute('data-focus');
+    });
+  });
+});
+
+/*
+document.addEventListener('DOMContentLoaded', function(){
 
   var elements = document.querySelectorAll('[data-show-margin-left]');
   Array.prototype.forEach.call(elements, function(el, i){
@@ -91,3 +106,4 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
 });
+*/

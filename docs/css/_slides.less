@@ -1,10 +1,59 @@
+#slideshow{
+  width: 100vw;
+  height: 100vh;
+}
+
 .slides h1,h2{
   text-transform: none;
   line-height: 1.2;
 }
 
+// slide transitions
+// --------------------------
 .slide{
-  
+  background-color: white;
+  //#transition.property(top);
+  //#transition.duration(0.75s);
+  #transition._(top,0.45s);
+  #transition._(background-color,1.5s);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  &[data-state='off']{
+    top: -100%;
+  }
+}
+
+.slide{
+  &.fade[data-color="red"],.red{
+    background-color: @red;
+  }
+  &.fade[data-color='slate'],.slate{
+    background-color: @slate;
+  }
+  &.fade[data-color='black'],.black{
+    background-color: black;
+  }
+  &.fade[data-color='navy'],.navy{
+    background-color: @navy;
+  }
+  &.fade[data-color='purple'],.purple{
+    background-color: @purple;
+  }
+  &.fade[data-color='fuchsia'],.fuchsia{
+    background-color: @fuchsia;
+  }
+  &.fade[data-color='aqua'],.aqua{
+    background-color: @aqua;
+  }
+  &.fade[data-color='yellow'],.yellow{
+    background-color: @yellow;
+  }
+  &.fade[data-color='orange'],.orange{
+    background-color: @orange;
+  }
 }
 
 

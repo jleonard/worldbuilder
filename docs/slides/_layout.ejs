@@ -9,9 +9,13 @@
     <link rel="stylesheet" href="/css/docs.css">
   </head>
   <body class='slides'>
-    <%- yield %>
+    <div id='slideshow' tabindex='0'>
+      <%- yield %>
+    </div>
     <script type="text/javascript" src="/js/prism.js"></script>
     <script title="This script does x" src="/js/side-nav.js"></script>
     <script title="This script does x" src="/js/box.model.display.js"></script>
+    <script title="Fades the intro slides" src="/js/fading.color.slides.js"></script>
+    <script title="Slide show logic" src="/js/slide.show.js"></script>
   </body>
 </html>

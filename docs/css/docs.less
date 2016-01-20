@@ -2,12 +2,17 @@
 
 @fontPath : '../fonts/';
 
+@import (less) '_keyframes.less';
+@import (less) '_mixins.less';
 @import (less) '_box-model-display.less';
 @import (less) '_font-face.less';
 @import (less) 'learn/_layouts.less';
 @import (less) 'learn/_box-model.less';
 @import (less) '_prism.less';
+@import (less) '_prism-dark.less';
 @import (less) '_slides.less';
+
+@import (less) 'lectures/_sketch.less';
 
 @navy      : #001f3f;
 @blue      : #0074d9;
@@ -32,6 +37,11 @@
 @newsprint : #f0ece8;
 @pee       : #f4fd72;
 
+
+@svaBlue   : #00add3;
+@svaGrey   : #4c4d4f;
+@svaRed    : #dc0032;
+
 @sans : 'Open Sans', sans-serif;
 @mono : 'Source Code Pro', monospace;
 
@@ -43,6 +53,37 @@ html{
 body{
   font-family: @sans;
   margin: 0;
+  color: @slate;
+}
+
+ol,ul{
+  margin: 0;
+}
+
+nav.main{
+  background-color: white;
+  border-bottom: 1px solid @smoke;
+  .inner{
+    height: @baseUnit * 3;
+    position: relative;
+    max-width: 1024px;
+    margin: 0 auto;
+    background-image: url('../img/SVA_primary_color.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  h1{
+    #center.y();
+    font-size: @baseUnit;
+    color: @slate;
+    margin: 0;
+    margin-left: @baseUnit * 8.5;
+  }
+}
+
+.action{
+  color: @blue;
+  cursor: pointer;
 }
 
 *,*:before,*:after{
@@ -55,14 +96,18 @@ main{
   .inner{
     margin: 0 auto;
     max-width: 1024px;
+    display: flex;
     > *{ float: left; }
   }
   .inner > article{
     width: 80%;
+    padding-right: @baseUnit;
   }
   .inner > nav{
     width: 20%;
-    padding-right: @baseUnit;
+    padding-left: @baseUnit;
+    padding-top: @baseUnit * 2.5;
+    border-left: 1px solid @smoke;
     ul{
       #initial > ._(margin);
       #initial > ._(padding);
@@ -72,27 +117,31 @@ main{
       text-decoration: none;
       color: @slate;
       font-weight: 700;
+      font-size: @baseUnit;
     }
   }
 }
 
 pre,code{
-  &[class*="language-"]{
+  &[class*='language-']{
     margin: 0;
     padding: 0;
   }
-}
-
-pre,code{
   font-family: @mono !important;
+  &.major{
+    font-size: @baseUnit * 1.5;
+  }
 }
 
 // typography
 // ---------------------------------
 // 1, 1.5, 2.25, 3.375, 5.063, 7.594, 11.391
+h1,h2,h3,h4,h5,h6{
+  line-height: 1;
+}
 h1{
   font-size: @baseUnit * 5.063;
-  text-transform: uppercase;
+  //text-transform: uppercase;
 }
 h2{
   font-size: @baseUnit * 3.375;
@@ -107,11 +156,14 @@ h4{
 }
 
 h5{
-  font-size: @baseUnit;
+  font-size: @baseUnit * 1.25;
 }
 
-p{
-  font-size: @baseUnit * 1.5;
+p,ol,ul{
+  font-size: @baseUnit * 1.25;
+  &.major{
+    font-size: @baseUnit * 1.5;
+  }
 }
 
 blockquote{
@@ -187,6 +239,7 @@ blockquote{
   border: 1px solid @newsprint;
   padding: @baseUnit * 2;
   border-radius: @radius;
+  background-color: @slate;
 }
 
 section{

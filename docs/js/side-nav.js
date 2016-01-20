@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function(){
       var id = el.textContent.toLowerCase().replace(/\W+/g, '');
       var a = document.createElement('A');
       a.setAttribute('name',id);
+      a.style.height = '1px';
       el.parentNode.insertBefore(a,el);
       list += '<li><a href="#' + id + '">' + el.textContent + '</a></li>';
     });
